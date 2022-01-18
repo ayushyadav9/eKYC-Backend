@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const UserSchema = new Schema({
+const BankSchema = new Schema({
   email:{
     type: String,
     required: true,
@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  kycId: {
+  ethAddress: {
     type: String,
     required: true,
     unique: true,
@@ -21,5 +21,5 @@ const UserSchema = new Schema({
     default: Date.now,
   },
 });
-const User = mongoose.model('user',UserSchema)
-module.exports = User;
+const Bank = mongoose.model('bank',BankSchema)
+module.exports = Bank;

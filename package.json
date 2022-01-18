@@ -30,6 +30,7 @@
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
+    "truffle": "^5.4.29",
     "winston": "^3.4.0"
   }
 }
