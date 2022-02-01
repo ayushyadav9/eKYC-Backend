@@ -10,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayushyadav9/eKYC-Portal.git"
+    "url": "git+https://github.com/ayushyadav9/eKYC-Backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ayushyadav9/eKYC-Portal/issues"
+    "url": "https://github.com/ayushyadav9/eKYC-Backend/issues"
   },
-  "homepage": "https://github.com/ayushyadav9/eKYC-Portal#readme",
+  "homepage": "https://github.com/ayushyadav9/eKYC-Backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express.js": "^1.0.0",
@@ -30,7 +31,10 @@
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
+    "socket.io": "^4.0.1",
+    "socket.io-client": "^4.0.1",
     "truffle": "^5.4.29",
+    "web3": "^1.7.0",
     "winston": "^3.4.0"
   }
 }
