@@ -232,7 +232,7 @@ module.exports.getBankList = async (req, res) => {
 
 module.exports.updateRecord = async (req, res) => {
   try {    
-    let t = await updateRecordBC(req.user.kycId,req.body.record_type,req.body.record_data);    
+    let t = await updateRecordBC(req.body.kycId,req.body.record_type,req.body.record_data);    
     res.status(200).json({
       message: "Data Updated Successfully",      
       success: true,

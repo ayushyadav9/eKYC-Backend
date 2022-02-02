@@ -19,7 +19,7 @@ router.post("/login", login);
 router.get("/getClientData",passport.authenticate("jwt", { session: false }),getClientData);
 router.get("/getBankList", passport.authenticate("jwt", { session: false }), getBankList);
 router.post("/request", passport.authenticate("jwt", { session: false }), request);
-router.post("/updateRecord", passport.authenticate("jwt", { session: false }), updateRecord);
+router.post("/updateRecord", updateRecord);
 router.post("/updateSocket", passport.authenticate("jwt", { session: false }), updateSocket);
 router.post("/getSocket", getSocket);
 
