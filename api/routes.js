@@ -13,7 +13,8 @@ const {
   getSocket,
   addApprovedClient,
   getApprovedClients,
-  checkUser
+  checkUser,
+  updateRecordFromClient
 } = require("./controllers/userController");
 
 router.get("/", home);
@@ -23,6 +24,7 @@ router.get("/getClientData",passport.authenticate("jwt", { session: false }),get
 router.get("/getBankList", passport.authenticate("jwt", { session: false }), getBankList);
 router.post("/request", passport.authenticate("jwt", { session: false }), request);
 router.post("/updateRecord", updateRecord);
+router.post("/updateRecordFromClient",passport.authenticate("jwt", { session: false }), updateRecordFromClient);
 router.post("/updateSocket", passport.authenticate("jwt", { session: false }), updateSocket);
 router.post("/getSocket", getSocket);
 router.post("/addApprovedClient", addApprovedClient);

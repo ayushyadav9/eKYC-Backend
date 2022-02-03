@@ -246,6 +246,23 @@ module.exports.updateRecord = async (req, res) => {
   }
 };
 
+module.exports.updateRecordFromClient = async (req, res) => {
+  try {    
+    let user = req.user
+    let t = await updateRecordBC(user.kycId,req.body.record_type,req.body.record_data);    
+    res.status(200).json({
+      message: "Data Updated Successfully",      
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      message: "Something went wrong",
+      success: false,
+    });
+  }
+};
+
 module.exports.updateSocket = async (req, res) => {
   try {    
     let user = req.user
