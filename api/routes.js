@@ -10,7 +10,8 @@ const {
   request,
   updateRecord,
   updateSocket,
-  getSocket
+  getSocket,
+  checkUser
 } = require("./controllers/userController");
 
 router.get("/", home);
@@ -22,6 +23,7 @@ router.post("/request", passport.authenticate("jwt", { session: false }), reques
 router.post("/updateRecord", updateRecord);
 router.post("/updateSocket", passport.authenticate("jwt", { session: false }), updateSocket);
 router.post("/getSocket", getSocket);
+router.post("/checkUser", checkUser);
 
 
 router.get("*", notFound);
