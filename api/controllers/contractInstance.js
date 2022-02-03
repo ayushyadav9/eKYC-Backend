@@ -655,4 +655,4 @@ const abi = [
 	}
 ]
 
-module.exports = new web3.eth.Contract(abi, "0xCb153e1A5211a16FDCB1c0BD77CD4D87b0c450bB");
+module.exports = new web3.eth.Contract(abi, "0xc94ca51Fc9ae6094bbDB1c3a72B3eBae183FdFFB");
