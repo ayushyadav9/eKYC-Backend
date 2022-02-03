@@ -20,6 +20,10 @@ const BankSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  approvedClients:[{
+      name: {type: String},
+      kycId:{type: String}
+  }]
 });
 const Bank = mongoose.model('bank',BankSchema)
 module.exports = Bank;
