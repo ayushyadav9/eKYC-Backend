@@ -287,6 +287,51 @@ module.exports.getSocket = async (req, res) => {
 };
 
 
+module.exports.addApprovedClient = async (req, res) => {
+ 
+  try {   
+    let data = req.body;
+    console.log(req.body);
+    await Bank.updateOne({ ethAddress: data.ethAddress },{ $push: { approvedClients : {name: data.name,kycId:data.kycId}}});
+    res.status(200).json({
+      message: "Approved Client added Successfully",      
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      message: "Approved Client NOT added Successfully",
+      success: false,
+    });
+  }
+};
+
+module.exports.getApprovedClients = async (req, res) => {
+
+  try {    
+    let data = req.body;
+   
+    let bank = await Bank.findOne({ ethAddress: data.ethAddress });
+    if(!bank || !bank.approvedClients){
+      return res.status(400).json({
+        message: "No bank found",      
+        success: false,
+      });
+    }
+    res.status(200).json({
+      approvedClients : bank.approvedClients,
+      message: "Approved Clients Fetched Successfuly",      
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      message: "Approved Clients NOT Fetched Successfuly",
+      success: false,
+    });
+  }
+};
+
 module.exports.checkUser = async (req, res) => {
   try {    
     let user = await User.findOne({ email: req.body.email });
