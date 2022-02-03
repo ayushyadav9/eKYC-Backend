@@ -331,3 +331,25 @@ module.exports.getApprovedClients = async (req, res) => {
     });
   }
 };
+
+module.exports.checkUser = async (req, res) => {
+  try {    
+    let user = await User.findOne({ email: req.body.email });
+    if(user){
+      return res.status(200).json({
+        message: false,      
+        success: true
+      });
+    }
+    return res.status(200).json({
+      message: true,      
+      success: true
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      message: "Something went wrong",
+      success: false,
+    });
+  }
+};
